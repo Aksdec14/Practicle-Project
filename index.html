@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" data-view="dashboard" class="active">Dashboard</a></li>
+            <li><a href="./report.html" data-view="reports">Reports</a></li>
+            <li><a href="#" data-view="settings">Settings</a></li>
+        </ul>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+
+    <main class="main-content">
+        <section id="dashboard" class="view">
+            <h1>Dashboard</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Visitors</h3>
+                    <p id="visitorsCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Bounce Rate</h3>
+                    <p id="bounceRate">0%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Conversions</h3>
+                    <p id="conversionsCount">0</p>
+                </div>
+            </div>
+            <canvas id="analyticsChart" width="400" height="200"></canvas>
+            <div class="ai-summary">
+                <h3>AI Summary</h3>
+                <p id="summary">Loading summary...</p>
+            </div>
+        </section>
+
+        <section id="reports" class="view" style="display:none;">
+            <h1>Reports</h1>
+            <p>Report content goes here.</p>
+            <h2>Yearly Report Data</h2>
+            <div id="report-table-container"></div>
+        </section>
+
+        <section id="settings" class="view" style="display:none;">
+            <h1>Settings</h1>
+            <form id="settingsForm">
+                <label>
+                    Email notifications:
+                    <input type="checkbox" id="emailNotifications" />
+                </label>
+
+                <!-- Chart Type Selector -->
+                <label for="chartTypeSelect">Chart Type:</label>
+                <select id="chartTypeSelect" name="chartTypeSelect">
+                    <option value="bar">Bar</option>
+                    <option value="line">Line</option>
+                    <option value="radar">Radar</option>
+                </select>
+
+                <button type="submit">Save Settings</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
